@@ -348,15 +348,18 @@ async def handle_image(client, message):
 @colab_bot.on_message(filters.command("setname") & filters.private)
 async def custom_name(client, message):
     global BOT
-    if len(message.command) != 2:
-        msg = await message.reply_text(
-            "Send\n/setname <code>custom_fileame.extension</code>\nTo Set Custom File Name 📛",
-            quote=True,
+    if message.text.startswith("/setname "):    
+        split_text = message.text.split("/setname ", 1)
+        if len(split_text) == 2:
+            custom_filename = split_text[1]
+            BOT.Options.custom_name = custom_filename
+            msg = await message.reply_text(
+                "Custom Name Has Been Successfully Set !", quote=True
         )
     else:
-        BOT.Options.custom_name = message.command[1]
         msg = await message.reply_text(
-            "Custom Name Has Been Successfully Set !", quote=True
+            "Send\n/setname <code>custom_filename.extension</code>\nTo Set Custom File Name 📛",
+            quote=True,
         )
 
     await sleep(15)
