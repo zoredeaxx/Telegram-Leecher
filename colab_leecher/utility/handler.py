@@ -254,6 +254,7 @@ async def SendLogs(is_leech: bool):
         await MSG.sent_msg.reply_text(
             text=f"**SOURCE »** __[Here]({Messages.src_link})__" + last_text
         )
+        await MSG.sent_msg.delete()
         await MSG.status_msg.edit_text(
             text=Messages.task_msg + l_ink + last_text,
             reply_markup=InlineKeyboardMarkup(
@@ -298,6 +299,7 @@ async def SendLogs(is_leech: bool):
 
                 for fn_txt in final_texts:
                     MSG.status_msg = await MSG.status_msg.reply_text(text=fn_txt)
+                await MSG.status_msg.delete()
             except Exception as e:
                 Err = f"<b>Error Sending logs » </b><i>{e}</i>"
                 Err += f"\n\n<i>⚠️ If You are Unknown with this **ERROR**, Then Forward This Message in [Colab Leecher Discussion](https://t.me/Colab_Leecher_Discuss) Where [Xron Trix](https://t.me/XronTrix) may fix it</i>"
