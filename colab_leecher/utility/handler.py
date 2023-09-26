@@ -251,9 +251,9 @@ async def SendLogs(is_leech: bool):
     )
 
     if BOT.State.task_going:
-        await MSG.sent_msg.reply_text(
-            text=f"**SOURCE »** __[Here]({Messages.src_link})__" + last_text
-        )
+        #await MSG.sent_msg.reply_text(
+            #text=f"**SOURCE »** __[Here]({Messages.src_link})__" + last_text
+        #)
         await MSG.status_msg.edit_text(
             text=Messages.task_msg + l_ink + last_text,
             reply_markup=InlineKeyboardMarkup(
@@ -295,8 +295,8 @@ async def SendLogs(is_leech: bool):
                         final_text += fileText
                 final_texts.append(final_text)
 
-                for fn_txt in final_texts:
-                    MSG.status_msg = await MSG.status_msg.reply_text(text=fn_txt)
+                #for fn_txt in final_texts:
+                    #MSG.status_msg = await MSG.status_msg.reply_text(text=fn_txt)
                 
             except Exception as e:
                 Err = f"<b>Error Sending logs » </b><i>{e}</i>"
