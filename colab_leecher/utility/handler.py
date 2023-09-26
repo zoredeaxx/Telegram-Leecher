@@ -254,7 +254,6 @@ async def SendLogs(is_leech: bool):
         await MSG.sent_msg.reply_text(
             text=f"**SOURCE »** __[Here]({Messages.src_link})__" + last_text
         )
-        await MSG.sent_msg.delete()
         await MSG.status_msg.edit_text(
             text=Messages.task_msg + l_ink + last_text,
             reply_markup=InlineKeyboardMarkup(
@@ -278,7 +277,6 @@ async def SendLogs(is_leech: bool):
                 ]
             ),
         )
-        await MSG.status_msg.delete()
         if is_leech:
             try:
                 final_texts = []
