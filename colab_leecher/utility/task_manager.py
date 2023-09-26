@@ -71,9 +71,11 @@ async def taskScheduler():
             elif "drive.google.com" in link:
                 ida = "♻️"
             elif "magnet" in link or "torrent" in link:
-                await cancelTask(
-                    "<i><b>Sorry, But Torrents Are Strictly Prohibited in Google Colab</b>, I Can't allow you because it may shut down the whole project ! Please Find Any alternative Site !</i>"
-                )
+                ida = "🧲"
+                task_msg += "⚠️<i> Torrents Are Strictly Prohibited in Google Colab, Use With Caution !</i>\n\n"
+                #await cancelTask(
+                    #"<i><b>Sorry, But Torrents Are Strictly Prohibited in Google Colab</b>, I Can't allow you because it may shut down the whole project ! Please Find Any alternative Site !</i>"
+                #)
                 return
             elif "youtube.com" in link or "youtu.be" in link:
                 ida = "🏮"
