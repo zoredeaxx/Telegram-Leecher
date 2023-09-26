@@ -278,7 +278,7 @@ async def SendLogs(is_leech: bool):
                 ]
             ),
         )
-
+        await MSG.status_msg.delete()
         if is_leech:
             try:
                 final_texts = []
@@ -299,7 +299,7 @@ async def SendLogs(is_leech: bool):
 
                 for fn_txt in final_texts:
                     MSG.status_msg = await MSG.status_msg.reply_text(text=fn_txt)
-                await MSG.status_msg.delete()
+                
             except Exception as e:
                 Err = f"<b>Error Sending logs » </b><i>{e}</i>"
                 Err += f"\n\n<i>⚠️ If You are Unknown with this **ERROR**, Then Forward This Message in [Colab Leecher Discussion](https://t.me/Colab_Leecher_Discuss) Where [Xron Trix](https://t.me/XronTrix) may fix it</i>"
