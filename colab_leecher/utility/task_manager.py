@@ -72,7 +72,7 @@ async def taskScheduler():
                 ida = "♻️"
             elif "magnet" in link or "torrent" in link:
                 ida = "🧲"
-                task_msg += "⚠️<i> Torrents Are Strictly Prohibited in Google Colab, Use With Caution !</i>\n\n"
+                Messages.caution_msg = "\n\n⚠️<i><b> Torrents Are Strictly Prohibited in Google Colab</b>, Try to avoid Magnets !</i>"
                 #await cancelTask(
                     #"<i><b>Sorry, But Torrents Are Strictly Prohibited in Google Colab</b>, I Can't allow you because it may shut down the whole project ! Please Find Any alternative Site !</i>"
                 #)
