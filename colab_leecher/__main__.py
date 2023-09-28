@@ -432,18 +432,18 @@ async def help_command(client, message):
     await message_deleter(message, msg)
 
 async def startup_message():
-    try:
-        # Send a message to the bot owner
+    try:        
         await colab_bot.send_message(chat_id=OWNER, text="<b>Bot Started!</b>")
     except Exception as e:
         print(f"Error sending startup message: {str(e)}")
 
 async def main():
     await colab_bot.start()
+    await startup_message()  
 
 if __name__ == "__main__":
-    asyncio.get_event_loop().run_until_complete(asyncio.gather(main(), startup_message()))
-    asyncio.get_event_loop().run_forever() 
-
+    asyncio.get_event_loop().run_until_complete(main())
+    asyncio.get_event_loop().run_forever()
+    
 #logging.info("Colab Leecher Started !")
 #colab_bot.run()
