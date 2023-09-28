@@ -431,9 +431,11 @@ async def help_command(client, message):
     await sleep(15)
     await message_deleter(message, msg)
 
-@colab_bot.on_start()
-async def on_start_handler(client, message):    
-    await client.send_message(chat_id=int(OWNER), text="<b>Bot Started!</b>")
+async def startup_message():
+    try:        
+        await colab_bot.send_message(chat_id=OWNER, text="<b>Bot Started!</b>")
+    except Exception as e:
+        print(f"Error sending startup message: {str(e)}")
 
 logging.info("Colab Leecher Started !")
-colab_bot.run()
+colab_bot.run(startup_message())
