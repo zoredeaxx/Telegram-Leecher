@@ -443,6 +443,7 @@ async def main():
     await colab_bot.idle()
 
 if __name__ == "__main__":    
+    import asyncio
     asyncio.get_event_loop().run_until_complete(main())
 
 #logging.info("Colab Leecher Started !")
