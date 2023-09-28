@@ -437,6 +437,13 @@ async def startup_message():
     except Exception as e:
         print(f"Error sending startup message: {str(e)}")
 
-colab_bot.start()
-logging.info("Colab Leecher Started !")
-colab_bot.run(startup_message())
+async def main():
+    await colab_bot.start()
+    await startup_message()
+    await colab_bot.idle()
+
+if __name__ == "__main__":    
+    asyncio.get_event_loop().run_until_complete(main())
+
+#logging.info("Colab Leecher Started !")
+#colab_bot.run()
