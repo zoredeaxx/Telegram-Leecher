@@ -9,11 +9,9 @@ google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
 httpx
-git+https://github.com/MKN-BOTZ/pyrogram
-#pyrogram==2.0.73
+pyrogram==2.0.80
 requests
 tgcrypto
 uvloop
 opencv-python
 yt_dlp
-#pyrofork
